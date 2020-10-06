@@ -1,0 +1,45 @@
+/*
+ * Desenvolvimento:
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 06 de outubro de 2020.
+ */
+
+ FAST TUTORIAL GITHUB
+-------------------------------------------------
+inserir identificacao global para primeiro acesso
+-------------------------------------------------
+git config --global user.email "augusto.rr.arruda@gmail.com"
+git config --global user.name "august0arruda"
+
+0. Acessar o diretorio que desejar
+0. git remote -v => saber se existe um diretorio remoto
+
+origin	https://github.com/august0arruda/lamp (fetch)
+origin	https://github.com/august0arruda/lamp (push)
+
+-------------------------------
+DOWNLOAD DIRETORIO MASTER (GIT)
+-------------------------------
+1. git clone https://o_caminho
+2. git add . => adiciona todas alteracoes no index(insercoes e delecoes)
+2. git add * => adiciona todas alteracoes no index(somente as insercoes)
+3. git commit -m "comentários das alterações" => confirma as mudancas e adiciona cometario  
+4. git push -u origin master (conforme branche: master, main) => envia as alteracoes ao servidor
+4. git push origin master (conforme branche: master, main) => envia as alteracoes ao servidor
+
+------------------------------------------------------------------------------
+DOWNLOAD DE ATUALIZACAO DA VERSAO DO DIRETORIO MASTER (GIT) AO DIRETORIO LOCAL
+------------------------------------------------------------------------------
+1. git pull  => para atualizar seu repositório local com a mais nova versão, execute
+
+----------------------------------------
+UPLOAD ALTERACOES DIRETORIO MASTER (GIT)
+----------------------------------------
+1. git add . => adiciona todas alteracoes no index(insercoes e delecoes)
+1. git add * => adiciona todas alteracoes no index(somente as insercoes)
+2. git commit -m "comentários das alterações" => confirma as mudancas e adiciona cometario  
+3. git push -u origin master (conforme branche: master, main) => envia as alteracoes ao servidor
+3. git push  origin master (conforme branche: master, main) => envia as alteracoes ao servidor

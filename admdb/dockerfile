@@ -1,0 +1,23 @@
+############################################################
+# https://docs.docker.com/engine/reference/builder/        #
+# https://hub.docker.com/r/phpmyadmin/phpmyadmin           #
+# Dockerfile: Virtualizacao de Adm banco de dados Mysql    #
+# Container: server-phpmyadmin-node                        # 
+# Image: phpmyadmin.5-arra.06.10.2020:3.1                  #
+# Augusto Arruda                                           #
+# E-mail: augusto.rr.arruda@gmail.com                      #
+# analista de sistema, arquiteto de software               #
+# MAO 06/10/2020                                           #
+############################################################
+FROM phpmyadmin/phpmyadmin:5.0.0
+LABEL maintainer="augusto.rr.arruda@gmail.com"
+#define senha usuario
+ENV MYSQL_ROOT_PASSWORD=admin
+#define acesso do servidor mysql - exige a insercao do nome do servidor
+ENV PMA_ARBITRARY=1
+#define o tamanho de uploads de arquivos
+ENV UPLOAD_LIMIT=300000000
+
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t phpmyadmin.5-arra.06.10.2020:3.1 -f noms/admdb/dockerfile .
+#modo run   -> #root@not-un051:/docker-images-containers# docker run -p 80:80 -d --rm --name server-phpmyadmin-node phpmyadmin.5-arra.06.10.2020:3.1
+#modo exec  -> #root@not-un051:/docker-images-containers# docker exec -it server-phpmyadmin-node /bin/bash

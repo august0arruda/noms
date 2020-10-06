@@ -1,0 +1,21 @@
+############################################################
+# https://docs.docker.com/engine/reference/builder/        #
+# https://hub.docker.com/_/mysql                           #
+# Dockerfile: Virtualizacao de banco de dados Mysql        #
+# Container: server-mysql-node                             # 
+# Image: mysql.8-arra.06.10.2020:3.1                       #
+# Augusto Arruda                                           #
+# E-mail: augusto.rr.arruda@gmail.com                      #
+# analista de sistema, arquiteto de software               #
+# MAO 06/10/2020                                           #
+############################################################
+FROM mysql:8.0.21
+LABEL maintainer="augusto.rr.arruda@gmail.com"
+#ativar plugin de autenticacao nativa usuario root senha admin
+CMD [ "--default-authentication-plugin=mysql_native_password" ]
+#define senha usuario
+ENV MYSQL_ROOT_PASSWORD=admin
+
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t mysql.8-arra.06.10.2020:3.1 -f noms/db/dockerfile .
+#modo run   -> #root@not-un051:/docker-images-containers# docker run -p 80:80 -d --rm --name server-mysql-node mysql.8-arra.06.10.2020:3.1
+#modo exec  -> #root@not-un051:/docker-images-containers# docker exec -it server-mysql-node /bin/bash

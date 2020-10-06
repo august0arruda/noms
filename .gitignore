@@ -1,0 +1,12 @@
+############################################################
+# https://docs.docker.com/engine/reference/builder/        #
+# https://hub.docker.com/r/phpmyadmin/phpmyadmin           #
+# gitignore - ignora copia do diretorio e/ou arquivo       #
+# Augusto Arruda                                           #
+# E-mail: augusto.rr.arruda@gmail.com                      #
+# analista de sistema, arquiteto de software               #
+# MAO 05/08/2020                                           #
+############################################################
+
+# diretorio do banco de dados mysql
+db/data/

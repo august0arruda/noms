@@ -1,0 +1,43 @@
+/*
+ * Desenvolvimento:
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 06 de outubro de 2020.
+ */
+
+--------------------------------
+TUTORIAL DE INSTALACAO DO NOMS
+--------------------------------
+
+Apos a clonar repositorio github
+
+1. db (Banco de dados MYSQL) -> buildar o container
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t mysql.8-arra.06.10.2020:3.1 -f noms/db/dockerfile .
+
+2. admdb (administrador do bando de dados)-> buildar o container
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t phpmyadmin.5-arra.06.10.2020:3.1 -f noms/admdb/dockerfile .
+
+3. webservice (Servidor Web - NODE Express) -> buildar o container
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t node.12.18.3-arra.06.10.2020:3.1 -f noms/nodejs/dockerfile .
+
+4. Orquestracao dos containeres -> docker-compose.yml
+#modo exec 
+#root@not-un051:/docker-images-containers/noms# docker-compose up
+#remover conteineres do docker-compose -> docker-compose rm -v
+#remover conteineres do docker-compose ao fechar -> docker-compose down -v
+
+
+---------------------
+DADOS DOS CONTAINERS
+---------------------
+
+*Apache server
+Link > http://localhost/
+
+*PhpMyadmin
+Link > http://localhost:8080/
+servidor : server-mysql
+usuario : root
+senha : admin

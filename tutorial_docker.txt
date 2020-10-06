@@ -1,0 +1,17 @@
+/*
+ * Desenvolvimento:
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 06 de outubro de 2020.
+ */
+
+ FAST TUTORIAL DOCKER
+-docker ps : exibe as imagens ativas
+-docker images : exibe as imagens geradas
+-docker system prune : limpa erros imagens
+-docker image rmi nomeimage:version : remove imagem
+-docker-compose logs -f : exibe todos os logs dos containeres
+-docker logs -f server-apache : exibe o log do container
+-docker network list : exibe os dados da rede gerada pelo container

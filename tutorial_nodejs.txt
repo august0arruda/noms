@@ -1,0 +1,42 @@
+/*
+ * Desenvolvimento:
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 06 de outubro de 2020.
+ */
+
+--------------------------------
+TUTORIAL NODEJS
+--------------------------------
+
+#https://www.youtube.com/watch?v=-StV4sf9N0g
+#https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
+
+
+#instalacao no node com a versao definida
+# nvm install vX.X.X (versao definida)
+# nvm install node (versao atual)
+# nvm uninstall vX.X.X (desinstalacao da versao)
+# adicionar --reinstall-packages-from. (reinstalar os pacotes globais)
+# nvm install node --reinstall-packages-from=node (instala o pacote mais recente e atualiza os pacotes globais)
+# nvm install 8.1.0
+# pode instlar varias versoes e definir a ativa nvm use 4.2
+
+
+# ----CRIAR PROJETO---- 
+# Pacote para framework de teste assincronos - mocha
+# root@213d5e42d0b9:/usr/local/apache2/htdocs/ProjetosNode/teste# npm install --save mocha@8.1.1
+
+# Insercao de dados do projeto 
+# root@2e0d9f935983:/usr/local/apache2/htdocs/ProjetosNode# npm init
+# sera exigido preenchimento de dados do projeto: name, version, description, entry point, dos exigido uma serie de re de itens que vai gerar um json
+
+# Pacotes para dados falsos para teste
+# http://marak.github.io/faker.js/
+# root@2e0d9f935983:/usr/local/apache2/htdocs/ProjetosNode# npm install --save faker@4.1.0 
+
+# Pacotes para conexao com MYSQL
+# https://www.npmjs.com/package/express 
+# oot@2e0d9f935983:/usr/local/apache2/htdocs/ProjetosNode# npm install --save express@4.17.1 mysql@2.18.1 body-parser@1.19.0 

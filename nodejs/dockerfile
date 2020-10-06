@@ -1,0 +1,38 @@
+#######################################################################
+# https://docs.docker.com/engine/reference/builder/                   #
+# https://hub.docker.com/_/node                                       #
+# Dockerfile: Virtualizacao node v12.18.3 + npm v6.14.6               #
+# Container: server-node                                              # 
+# Image: node.12.18.3-arra.06.10.2020:3.1                             #
+# Augusto Arruda                                                      #
+# E-mail: augusto.rr.arruda@gmail.com                                 #
+# analista de sistema, arquiteto de software                          #
+# MAO 06/10/2020                                                      #
+#######################################################################
+FROM node:12.18.3
+
+#gera variavel de ambiente
+ENV HOME=/home/teste
+
+#copia os gerenciadores de dependecias para dentro do path variavel de ambiente
+COPY /noms/nodejs/teste/package*.json $HOME/node_docker/
+
+#define o diretorio de trabalho
+WORKDIR $HOME/node_docker
+
+# cria um usuario para dar permissao limitada para uso da aplicacao
+#RUN npm install --silent --progress=false
+RUN npm install --global npm@6.14.6
+
+#copia todo conteudo da raiz para pasta do container
+COPY /noms/nodejs/teste/. $HOME/node_docker/
+
+#expoe a porta de trabalho (executar para teste)
+#EXPOSE 3000
+
+#executa comando (executar para teste) 
+#CMD ["npm", "start"]
+
+#modo build -> #root@not-un051:/docker-images-containers# docker build -t node.12.18.3-arra.06.10.2020:3.1 -f noms/nodejs/dockerfile .
+#modo run   -> #root@not-un051:/docker-images-containers# docker run -p 3000:3000 --rm --name server-node node.12.18.3-arra.06.10.2020:3.1 
+#modo exec  -> #root@not-un051:/docker-images-containers# docker exec -it server-node /bin/bash

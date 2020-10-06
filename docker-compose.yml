@@ -1,0 +1,70 @@
+################################################################
+# Orquestracao de servidores - Docker Compose                  #
+# https://docs.docker.com/compose/compose-file/                #
+# Container de Servidores                                      #
+#                                                              #
+# Servidor WEB:  NODE Express                                  #
+# NODE.JS V12.18.3                                             #
+# NPM V6.14.6                                                  #    
+#                                                              #
+# Servidor de banco de dados: MySql                            #
+# server-mysql via TCP/IP                                      #
+# Tipo de servidor: MySQL                                      #
+# Versão do servidor: 8.0.20 - MySQL Community Server - GPL    #
+#                                                              #
+# Administrador de Banco de dados: PhpMyAdmin                  #
+# phpMyAdmin 5.0.2                                             #
+#                                                              #
+# Augusto Arruda                                               #
+# E-mail: augusto.rr.arruda@gmail.com                          #
+# analista de sistema, arquiteto de software                   #
+# MAO 06/10/2020                                               #
+################################################################
+
+version: '3.1'
+services:
+  #Servidor Banco de dados - MySql
+  server-mysql-node:
+    image: mysql.8-arra.06.10.2020:3.1
+    restart: always
+    container_name: server-mysql-node
+    volumes:
+      - /docker-images-containers/noms/db/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    
+  #Administrador de Banco de dados - PhpMyAdmin 
+  server-phpmyadmin-node:
+    image: phpmyadmin.5-arra.06.10.2020:3.1 
+    restart: always
+    container_name: server-phpmyadmin-node
+    links:
+      - server-mysql-node
+    ports:
+      - "8080:80"
+
+  #Servidor Web - NODE Express
+  server-node:
+    image: node.12.18.3-arra.06.10.2020:3.1
+    restart: always
+    container_name: server-node
+    volumes:
+      - /var/www/html/ProjetosNode/teste:/home/teste/node_docker
+    #executar comando dentro da pasta teste do container
+    #command: node index.js
+    command: npm start
+    ports:
+      - "3000:3000"
+    links:
+      - server-mysql-node
+
+#modo exec 
+#root@not-un051:/docker-images-containers/noms# docker-compose up -d
+#root@not-un051:/docker-images-containers/noms# docker-compose down
+#root@not-un051:/docker-images-containers/noms# "CTRL + C"
+#remover conteineres do docker-compose -> docker-compose rm -v
+#remover conteineres do docker-compose ao fechar -> #docker-compose down -v
+#Logs
+#root@not-un051:/docker-images-containers/noms# docker-compose logs -f
+#root@not-un051:/docker-images-containers/noms# docker logs -f server-apache
+#root@not-un051:/docker-images-containers/noms# docker network list
